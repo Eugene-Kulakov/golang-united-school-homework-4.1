@@ -1,11 +1,13 @@
 package reverse_string
 
-func ReverseString(input string) (output string) {
+func ReverseString(input string) string {
+	if input == "" {
+		return ""
+	}
 	runes_in := []rune(input)
 	var runes_out []rune
-	for i := len(runes_in) - 1; i <= 0; i-- {
+	for i := len(runes_in) - 1; i >= 0; i-- {
 		runes_out = append(runes_out, runes_in[i])
 	}
-	output = string(runes_out)
-	return output
+	return string(runes_out)
 }
